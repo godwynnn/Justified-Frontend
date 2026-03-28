@@ -5,14 +5,14 @@ import { useParams, useRouter } from 'next/navigation';
 import SermonForm, { SermonFormData } from '../../../components/SermonForm';
 import { useAuth } from '../../../context/AuthContext';
 
-const API_BASE = 'http://127.0.0.1:8000/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api';
 
 export default function EditSermon() {
     const params = useParams();
     const router = useRouter();
     const id = params.id;
     const { isAuthenticated, loading: authLoading } = useAuth();
-    const [initialData, setInitialData] = useState<SermonFormData | null>(null);
+    const [initialData, setInitialData] = useState<(SermonFormData & { image_url?: string; video_url?: string }) | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
@@ -34,10 +34,11 @@ export default function EditSermon() {
                     title: data.title || '',
                     speaker: data.speaker || '',
                     date: data.date || '',
-                    scripture: data.scripture || '',
-                    video_url: data.video_url || '',
+                    description: data.description || '',
                     audio_url: data.audio_url || '',
                     notes_url: data.notes_url || '',
+                    image_url: data.image_url || '',
+                    video_url: data.video_url || '',
                 });
             } catch (err) {
                 setError('Could not load sermon. It may have been deleted.');

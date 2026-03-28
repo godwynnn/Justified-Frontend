@@ -11,6 +11,7 @@ interface Sermon {
     scripture?: string;
     video_url?: string;
     audio_url?: string;
+    image_url?: string;
     notes_url?: string;
 }
 

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import SermonGrid from '../components/SermonGrid';
-import { MediaProvider } from '../context/MediaContext';
 import SermonsContent from '../components/SermonsContent';
 
 async function getSermons() {
     try {
-        const res = await fetch('http://127.0.0.1:8000/api/sermons/', { cache: 'no-store' });
+        const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api';
+        const res = await fetch(`${API_BASE}/sermons/`, { cache: 'no-store' });
         if (!res.ok) return [];
         return await res.json();
     } catch (error) {
@@ -19,8 +19,6 @@ export default async function Sermons() {
     const latestSermon = sermons.length > 0 ? sermons[0] : null;
 
     return (
-        <MediaProvider>
-            <SermonsContent sermons={sermons} latestSermon={latestSermon} />
-        </MediaProvider>
+        <SermonsContent sermons={sermons} latestSermon={latestSermon} />
     );
 }

@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 };
 
 import { AuthProvider } from './context/AuthContext';
+import { MediaProvider } from './context/MediaContext';
+import SermonPlayer from './components/SermonPlayer';
+import SermonFloatingBar from './components/SermonFloatingBar';
+import QuickPlayButton from './components/QuickPlayButton';
 
 export default function RootLayout({
     children,
@@ -23,9 +27,14 @@ export default function RootLayout({
             </head>
             <body className="bg-[#000814] text-white selection:bg-[#1313ec] selection:text-white font-sans antialiased">
                 <AuthProvider>
-                    <div className="relative flex min-h-screen flex-col overflow-x-hidden">
-                        {children}
-                    </div>
+                    <MediaProvider>
+                        <div className="relative flex min-h-screen flex-col overflow-x-hidden">
+                            {children}
+                        </div>
+                        <SermonPlayer />
+                        <SermonFloatingBar />
+                        <QuickPlayButton />
+                    </MediaProvider>
                 </AuthProvider>
             </body>
         </html>

@@ -2,8 +2,6 @@
 
 import { useMedia } from '../context/MediaContext';
 import { useAuth } from '../context/AuthContext';
-import SermonPlayer from './SermonPlayer';
-import SermonFloatingBar from './SermonFloatingBar';
 import Link from 'next/link';
 
 interface Sermon {
@@ -14,6 +12,7 @@ interface Sermon {
     scripture?: string;
     video_url?: string;
     audio_url?: string;
+    image_url?: string;
     notes_url?: string;
 }
 
@@ -49,7 +48,7 @@ export default function SermonGrid({ sermons, featuredSermon }: Props) {
                     <div className="relative h-[500px] lg:h-[600px] w-full rounded-xl overflow-hidden group">
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            style={{ backgroundImage: `url('${featuredSermon.notes_url || FEATURED_FALLBACK}')` }}
+                            style={{ backgroundImage: `url('${featuredSermon.image_url || FEATURED_FALLBACK}')` }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#000814]/95 via-[#000814]/40 to-[#000814]/10 flex flex-col justify-end p-8 lg:p-16">
                             <div className="max-w-3xl space-y-4">
@@ -105,7 +104,7 @@ export default function SermonGrid({ sermons, featuredSermon }: Props) {
                             <div className="relative aspect-video rounded-xl overflow-hidden mb-4 ring-1 ring-white/10 transition-all group-hover:ring-[#1313ec]/50 group-hover:shadow-[0_0_20px_rgba(19,19,236,0.3)]">
                                 <div
                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                    style={{ backgroundImage: `url('${sermon.notes_url || FALLBACK_IMG}')` }}
+                                    style={{ backgroundImage: `url('${sermon.image_url || FALLBACK_IMG}')` }}
                                 />
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
 
@@ -151,10 +150,6 @@ export default function SermonGrid({ sermons, featuredSermon }: Props) {
                     );
                 })}
             </section>
-
-            {/* Media player modal & floating bar */}
-            <SermonPlayer />
-            <SermonFloatingBar />
         </>
     );
 }

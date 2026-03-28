@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Navbar from '../components/Navbar';
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -16,7 +17,8 @@ export default function Contact() {
     };
 
     return (
-        <div className="bg-[#f6f6f8] dark:bg-[#000814] text-white min-h-screen pt-24 pb-24">
+        <div className="bg-[#000814] text-white min-h-screen pt-24 pb-24 relative overflow-hidden">
+            <Navbar />
             {/* Header */}
             <div className="max-w-7xl mx-auto px-6 mb-16 mt-12 text-center">
                 <p className="text-[#1313ec] tracking-[0.3em] uppercase text-sm font-bold mb-4">Reach Out</p>
@@ -31,12 +33,12 @@ export default function Contact() {
                 <div className="space-y-12">
                     <div>
                         <h3 className="text-sm font-bold text-[#1313ec] uppercase tracking-widest mb-4 border-b border-white/10 pb-2">Location</h3>
-                        <p className="text-2xl text-white font-light">123 Faith Street<br />Metropolis, NY 10001</p>
+                        <p className="text-2xl text-white font-light">Mgbuoba<br />Port Harcourt,Rivers State</p>
                     </div>
 
                     <div>
                         <h3 className="text-sm font-bold text-[#1313ec] uppercase tracking-widest mb-4 border-b border-white/10 pb-2">Reach Us</h3>
-                        <p className="text-2xl text-white font-light font-mono">+1 (234) 567-890<br />info@gracechurch.org</p>
+                        <p className="text-2xl text-white font-light font-mono">+234 8033096783<br />justifiedglobalministries@gmail.com</p>
                     </div>
 
                     <div>

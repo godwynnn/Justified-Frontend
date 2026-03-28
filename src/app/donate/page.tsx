@@ -1,6 +1,9 @@
+import Navbar from '../components/Navbar';
+
 export default function Donate() {
     return (
-        <div className="bg-[#f6f6f8] dark:bg-[#000814] text-white min-h-screen pt-24 pb-24">
+        <div className="bg-[#000814] text-white min-h-screen pt-24 pb-24 relative overflow-hidden">
+            <Navbar />
             {/* Header */}
             <div className="max-w-4xl mx-auto px-6 mb-16 mt-12 text-center">
                 <p className="text-[#1313ec] tracking-[0.3em] uppercase text-sm font-bold mb-4">Generosity</p>

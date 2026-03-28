@@ -16,7 +16,7 @@ export default function SermonFloatingBar() {
                     className="flex items-center gap-3 min-w-0 flex-1 hover:opacity-80 transition-opacity text-left"
                 >
                     <div className="size-12 rounded-lg bg-cover bg-center shrink-0 border border-white/10 overflow-hidden" 
-                         style={{ backgroundImage: `url('${activeSermon.notes_url || "https://images.unsplash.com/photo-1544427920-c49ccfb85579?q=80&w=2832&auto=format&fit=crop"}')` }}>
+                         style={{ backgroundImage: `url('${activeSermon.image_url || "https://images.unsplash.com/photo-1544427920-c49ccfb85579?q=80&w=2832&auto=format&fit=crop"}')` }}>
                         <div className="inset-0 flex items-center justify-center bg-black/40">
                              <span className="material-symbols-outlined text-white text-xs animate-pulse">equalizer</span>
                         </div>

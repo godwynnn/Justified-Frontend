@@ -2,7 +2,8 @@ import Link from 'next/link';
 
 async function getLatestSermon() {
     try {
-        const res = await fetch('http://127.0.0.1:8000/api/sermons/', { cache: 'no-store' });
+        const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api';
+        const res = await fetch(`${API_BASE}/sermons/`, { cache: 'no-store' });
         if (!res.ok) return null;
         const sermons = await res.json();
         return sermons.length > 0 ? sermons[0] : null;
@@ -13,6 +14,8 @@ async function getLatestSermon() {
 }
 
 import Navbar from './components/Navbar';
+import ServiceHours from './components/ServiceHours';
+import LatestSermon from './components/LatestSermon';
 
 export default async function Home() {
     const latestSermon = await getLatestSermon();
@@ -48,14 +51,14 @@ export default async function Home() {
                         {/* Text Layer 2: Middle (Partial Overlap) */}
                         <div className="layer-front relative -mt-4 md:-mt-8 ml-8 md:ml-16 z-30">
                             <h1 className="hero-text-large font-bold tracking-tighter text-white xl:text-[12rem] md:text-[8rem] text-[5rem]">
-                                REIMAGINED
+                                AWAKENING
                             </h1>
                         </div>
 
                         {/* Text Layer 3: Accent Floating */}
                         <div className="layer-front relative mt-12 md:mt-8 flex justify-end md:pr-20 z-40">
                             <h2 className="text-3xl md:text-5xl font-light text-[#1313ec] italic max-w-lg text-right leading-tight">
-                                Artistry meeting devotion.
+                                Revealing Christ Globally.
                             </h2>
                         </div>
                     </div>
@@ -94,41 +97,17 @@ export default async function Home() {
                 </div>
             </main>
 
-            {/* Dynamic Data Section: Latest Sermon preview based on API */}
-            {latestSermon && (
-                <section className="bg-background-dark py-24 relative z-40 border-t border-white/5">
-                    <div className="mx-auto max-w-[1440px] px-6 lg:px-20">
-                        <div className="mb-12 flex justify-between items-end">
-                            <div>
-                                <h3 className="text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Latest Message</h3>
-                                <h2 className="text-4xl font-bold">{latestSermon.title}</h2>
-                            </div>
-                            <Link href="/sermons" className="text-primary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
-                                All Messages <span className="material-symbols-outlined">arrow_forward</span>
-                            </Link>
-                        </div>
+            {/* Dynamic Data Section: Latest Sermon preview from client component */}
+            {latestSermon && <LatestSermon sermon={latestSermon} />}
 
-                        <div className="border border-white/10 bg-[#000c1d] rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
-                            <div className="w-full md:w-1/2 h-64 md:h-96 relative">
-                                <img src={latestSermon.notes_url || "https://images.unsplash.com/photo-1544427920-c49ccfb85579?q=80&w=2832&auto=format&fit=crop"} alt={latestSermon.title} className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-80" />
-                            </div>
-                            <div className="p-10 md:p-16 w-full md:w-1/2">
-                                <p className="text-sm text-primary font-mono mb-4">{new Date(latestSermon.date).toLocaleDateString()}</p>
-                                <h3 className="text-3xl font-bold mb-4">{latestSermon.speaker}</h3>
-                                <p className="text-slate-400 font-light mb-8 italic">"{latestSermon.scripture}"</p>
-                                <button className="bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-primary hover:text-white transition-colors inline-block text-center cursor-pointer">Listen Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            )}
+            <ServiceHours />
 
             {/* Feature Section */}
             <section className="bg-[#000814] py-24 relative z-40">
                 <div className="mx-auto max-w-[1440px] px-6 lg:px-20">
                     <div className="mb-20">
                         <h3 className="text-sm font-bold uppercase tracking-[0.4em] text-[#1313ec] mb-4">Values</h3>
-                        <h2 className="text-4xl md:text-6xl font-bold max-w-2xl">A Space for the Creative Soul.</h2>
+                        <h2 className="text-4xl md:text-6xl font-bold max-w-2xl">Manifesting Christ Everywhere</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -193,9 +172,14 @@ export default async function Home() {
                 <div className="mx-auto max-w-[1440px] px-6 lg:px-20">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                         <div className="col-span-1 md:col-span-2">
-                            <div className="flex items-center gap-3 mb-8">
-                                <div className="size-6 bg-[#1313ec] rounded-full"></div>
-                                <h2 className="text-2xl font-bold tracking-tight">Jusitified Global Ministries</h2>
+                            <div className="mb-8 flex justify-start">
+                                <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
+                                    <img 
+                                        src="/logo.png" 
+                                        alt="Justified Global Ministries" 
+                                        className="h-20 w-auto object-contain" 
+                                    />
+                                </Link>
                             </div>
                             <p className="text-slate-400 max-w-sm font-light">
                                 A contemporary spiritual community redefining the intersection of faith, art, and modern life.
@@ -212,7 +196,7 @@ export default async function Home() {
                         <div>
                             <h5 className="font-bold mb-6 text-white uppercase text-xs tracking-widest">Resource</h5>
                             <ul className="space-y-4 text-slate-400 font-light">
-                                <li><Link className="hover:text-[#1313ec] transition-colors" href="/donate">Privacy</Link></li>
+                                <li><Link className="hover:text-[#1313ec] transition-colors" href="/privacy">Privacy</Link></li>
                                 <li><Link className="hover:text-[#1313ec] transition-colors" href="/donate">Giving</Link></li>
                                 <li><Link className="hover:text-[#1313ec] transition-colors" href="/contact">Contact</Link></li>
                             </ul>

@@ -23,7 +23,7 @@ export default function About() {
                         </h1>
                     </div>
                 </div>
-                
+
                 <p className="mt-12 text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
                     Justified Global Ministries is a Christ-centered apostolic teaching and training ministry with a divine mandate to preach the Gospel of Jesus Christ to all nations.
                 </p>
@@ -56,7 +56,7 @@ export default function About() {
                         <div className="w-48 h-48 mx-auto bg-zinc-800 rounded-full mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-[#1313ec]">
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2787&auto=format&fit=crop" className="w-full h-full object-cover" alt="Pastor John Doe" />
                         </div>
-                        <h3 className="text-2xl font-bold tracking-tight text-white mb-2">Pastor John Doe</h3>
+                        <h3 className="text-2xl font-bold tracking-tight text-white mb-2">Pastor Fortune Kiri</h3>
                         <p className="text-[#1313ec] uppercase tracking-widest text-xs font-bold mb-4">Senior Pastor</p>
                         <p className="text-white/50 font-light text-sm italic">"Called to preach the uncompromised truth with love and clarity."</p>
                     </div>

@@ -17,11 +17,12 @@ export default function Navbar({ showSearch, onSearchChange }: NavbarProps) {
             <nav className="mx-auto flex max-w-[1440px] items-center justify-between">
                 <div className="flex items-center gap-12">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="size-8 bg-[#1313ec] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-[#1313ec]/20">
-                            <span className="material-symbols-outlined text-white text-xl">church</span>
-                        </div>
-                        <h2 className="text-xl font-bold tracking-tight uppercase">Justified</h2>
+                    <Link href="/" className="flex items-center group">
+                        <img 
+                            src="/logo.png" 
+                            alt="Justified Logo" 
+                            className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform" 
+                        />
                     </Link>
 
                     {/* Desktop Links */}
