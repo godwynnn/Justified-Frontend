@@ -42,22 +42,22 @@ export default async function Home() {
                         </svg>
 
                         {/* Text Layer 1: Behind */}
-                        <div className="layer-behind relative z-10">
-                            <h1 className="hero-text-large font-light tracking-tighter text-white/20 select-none italic xl:text-[12rem] md:text-[8rem] text-[5rem] -ml-4 md:-ml-8">
+                        <div className="layer-behind relative z-10 text-center md:text-left">
+                            <h1 className="hero-text-large font-light tracking-tighter text-white/20 select-none italic xl:text-[12rem] md:text-[8rem] text-[5rem] ml-0 md:-ml-8">
                                 FAITH
                             </h1>
                         </div>
 
                         {/* Text Layer 2: Middle (Partial Overlap) */}
-                        <div className="layer-front relative -mt-4 md:-mt-8 ml-8 md:ml-16 z-30">
+                        <div className="layer-front relative mt-0 md:-mt-8 ml-0 md:ml-16 z-30 text-center md:text-left">
                             <h1 className="hero-text-large font-bold tracking-tighter text-white xl:text-[12rem] md:text-[8rem] text-[5rem]">
                                 AWAKENING
                             </h1>
                         </div>
 
                         {/* Text Layer 3: Accent Floating */}
-                        <div className="layer-front relative mt-12 md:mt-8 flex justify-end md:pr-20 z-40">
-                            <h2 className="text-3xl md:text-5xl font-light text-[#1313ec] italic max-w-lg text-right leading-tight">
+                        <div className="layer-front relative mt-12 md:mt-8 flex justify-center md:justify-end pr-0 md:pr-20 z-40">
+                            <h2 className="text-3xl md:text-5xl font-light text-[#1313ec] italic max-w-lg text-center md:text-right leading-tight">
                                 Revealing Christ Globally.
                             </h2>
                         </div>

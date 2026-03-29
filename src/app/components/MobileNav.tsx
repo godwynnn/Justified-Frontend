@@ -43,15 +43,25 @@ export default function MobileNav() {
                     ))}
                     
                     {isAuthenticated ? (
-                        <button
-                            onClick={() => {
-                                logout();
-                                setOpen(false);
-                            }}
-                            className="text-left text-lg font-medium text-red-500"
-                        >
-                            Logout
-                        </button>
+                        <>
+                            <Link
+                                href="/sermons/new"
+                                onClick={() => setOpen(false)}
+                                className="text-lg font-bold text-[#1313ec] border-b border-white/5 pb-2 flex items-center gap-2"
+                            >
+                                <span className="material-symbols-outlined text-base">add</span>
+                                New Sermon
+                            </Link>
+                            <button
+                                onClick={() => {
+                                    logout();
+                                    setOpen(false);
+                                }}
+                                className="text-left text-lg font-medium text-red-500"
+                            >
+                                Logout
+                            </button>
+                        </>
                     ) : (
                         <>
                             <Link

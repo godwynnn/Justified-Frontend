@@ -52,9 +52,13 @@ export default function LoginPage() {
         <div className="bg-[#000814] text-white min-h-screen flex flex-col pt-24 px-6">
             <div className="mx-auto w-full max-w-md">
                 <div className="text-center mb-10">
-                    <div className="size-12 bg-[#1313ec] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#1313ec]/20">
-                        <span className="material-symbols-outlined text-white text-2xl">lock_open</span>
-                    </div>
+                    <Link href="/" className="inline-block mb-6 group">
+                        <img 
+                            src="/logo.png" 
+                            alt="Justified Logo" 
+                            className="h-16 w-auto object-contain group-hover:scale-105 transition-transform mx-auto filter brightness-110 shadow-lg shadow-[#1313ec]/10" 
+                        />
+                    </Link>
                     <h1 className="text-3xl font-bold tracking-tight uppercase">Welcome Back</h1>
                     <p className="text-slate-400 mt-2">Log in to your Justified Global account.</p>
                 </div>

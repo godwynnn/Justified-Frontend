@@ -58,12 +58,13 @@ export default function EditSermon() {
             {/* Header */}
             <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#000814]/80 backdrop-blur-md px-6 lg:px-20 py-5">
                 <nav className="mx-auto flex max-w-[1440px] items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="size-8 bg-[#1313ec] rounded-full flex items-center justify-center">
-                            <span className="material-symbols-outlined text-white text-xl">church</span>
-                        </div>
-                        <Link href="/" className="text-xl font-bold tracking-tight uppercase">Justified</Link>
-                    </div>
+                    <Link href="/" className="flex items-center group">
+                        <img
+                            src="/logo.png"
+                            alt="Justified Logo"
+                            className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+                        />
+                    </Link>
                     <Link
                         href="/sermons"
                         className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"

@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import { useAuth } from '../context/AuthContext';
 
 export default function SermonsContent({ sermons, latestSermon }: { sermons: any[], latestSermon: any }) {
+    const { isAuthenticated } = useAuth();
     return (
         <div className="bg-[#000814] text-white min-h-screen relative overflow-hidden">
             {/* Background Decorative Elements */}
@@ -15,6 +16,18 @@ export default function SermonsContent({ sermons, latestSermon }: { sermons: any
             </div>
 
             <Navbar showSearch />
+            
+            {/* Mobile Floating Action Button for Admins */}
+            {isAuthenticated && (
+                <div className="md:hidden fixed bottom-10 right-6 z-[60]">
+                    <Link 
+                        href="/sermons/new" 
+                        className="size-16 bg-[#1313ec] rounded-full flex items-center justify-center shadow-2xl shadow-[#1313ec]/40 ring-4 ring-white/10 active:scale-95 transition-all text-white border border-white/20"
+                    >
+                        <span className="material-symbols-outlined text-3xl">add</span>
+                    </Link>
+                </div>
+            )}
 
             <main className="max-w-[1400px] mx-auto pb-20 px-6 lg:px-20">
                 <SermonGrid sermons={sermons} featuredSermon={latestSermon} />
@@ -38,12 +51,13 @@ export default function SermonsContent({ sermons, latestSermon }: { sermons: any
                 <div className="max-w-[1400px] mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                         <div className="space-y-6">
-                            <div className="flex items-center gap-3">
-                                <div className="size-8 bg-[#1313ec] rounded-full flex items-center justify-center">
-                                    <span className="material-symbols-outlined text-white text-xl">church</span>
-                                </div>
-                                <Link href="/" className="text-xl font-bold tracking-tight uppercase">Justified</Link>
-                            </div>
+                            <Link href="/" className="flex items-center gap-3 group">
+                                <img
+                                    src="/logo.png"
+                                    alt="Justified Logo"
+                                    className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+                                />
+                            </Link>
                             <p className="text-white/40 text-sm leading-relaxed">
                                 Join us for our weekly gatherings at our various campuses across the city.
                             </p>

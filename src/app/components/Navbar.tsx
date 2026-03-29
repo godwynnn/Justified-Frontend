@@ -18,10 +18,10 @@ export default function Navbar({ showSearch, onSearchChange }: NavbarProps) {
                 <div className="flex items-center gap-12">
                     {/* Logo */}
                     <Link href="/" className="flex items-center group">
-                        <img 
-                            src="/logo.png" 
-                            alt="Justified Logo" 
-                            className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform" 
+                        <img
+                            src="/logo.png"
+                            alt="Justified Logo"
+                            className="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform"
                         />
                     </Link>
 
@@ -38,34 +38,40 @@ export default function Navbar({ showSearch, onSearchChange }: NavbarProps) {
                     {showSearch && (
                         <div className="relative group hidden lg:block">
                             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 group-focus-within:text-[#1313ec] transition-colors">search</span>
-                            <input 
-                                className="bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-[#1313ec] focus:border-[#1313ec] w-64 transition-all outline-none" 
-                                placeholder="Search sermons..." 
-                                type="text" 
+                            <input
+                                className="bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-[#1313ec] focus:border-[#1313ec] w-64 transition-all outline-none"
+                                placeholder="Search sermons..."
+                                type="text"
                                 onChange={(e) => onSearchChange?.(e.target.value)}
                             />
                         </div>
                     )}
 
-                    {/* Desktop Auth */}
-                    <div className="hidden md:flex items-center gap-4">
+                    {/* Desktop & Mobile Admin Action */}
+                    <div className="flex items-center gap-2 md:gap-4">
                         {isAuthenticated ? (
-                            <div className="flex items-center gap-4 border-l border-white/10 pl-6">
-                                <Link href="/sermons/new" className="flex items-center gap-2 border border-white/10 hover:bg-white/5 px-4 py-2 rounded-lg text-xs font-bold transition-all">
+                            <div className="flex items-center gap-2 md:gap-4 md:border-l md:border-white/10 md:pl-6">
+                                {/* Desktop Text Button */}
+                                <Link href="/sermons/new" className="hidden md:flex items-center gap-2 border border-white/10 hover:bg-white/5 px-4 py-2 rounded-lg text-xs font-bold transition-all">
                                     <span className="material-symbols-outlined text-base">add</span>
                                     New Sermon
                                 </Link>
+                                {/* Mobile Icon Button */}
+                                <Link href="/sermons/new" className="md:hidden flex items-center justify-center size-9 border border-white/10 bg-white/5 rounded-lg text-white" title="New Sermon">
+                                    <span className="material-symbols-outlined text-lg">add</span>
+                                </Link>
+                                
                                 <div className="flex items-center gap-3">
-                                    <div className="size-8 bg-white/10 rounded-full flex items-center justify-center">
+                                    <div className="hidden xs:flex size-8 bg-white/10 rounded-full items-center justify-center">
                                         <span className="material-symbols-outlined text-white/60 text-lg">person</span>
                                     </div>
                                     <div className="hidden sm:block">
                                         <p className="text-[10px] font-bold uppercase tracking-widest text-[#1313ec] leading-none">Admin</p>
                                         <p className="text-xs font-bold text-white leading-none mt-1">{user?.first_name}</p>
                                     </div>
-                                    <button 
+                                    <button
                                         onClick={logout}
-                                        className="ml-2 text-slate-500 hover:text-white transition-colors"
+                                        className="ml-1 md:ml-2 text-slate-500 hover:text-white transition-colors p-1"
                                         title="Logout"
                                     >
                                         <span className="material-symbols-outlined text-lg">logout</span>
@@ -73,9 +79,9 @@ export default function Navbar({ showSearch, onSearchChange }: NavbarProps) {
                                 </div>
                             </div>
                         ) : (
-                            <div className="flex items-center gap-6">
+                            <div className="flex items-center gap-4 md:gap-6">
                                 <Link href="/login" className="text-sm font-bold text-slate-400 hover:text-white transition-colors">Log In</Link>
-                                <Link href="/signup" className="bg-[#1313ec] hover:bg-[#1313ec]/80 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-[#1313ec]/20">
+                                <Link href="/signup" className="hidden sm:block bg-[#1313ec] hover:bg-[#1313ec]/80 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-[#1313ec]/20">
                                     Join Us
                                 </Link>
                             </div>
