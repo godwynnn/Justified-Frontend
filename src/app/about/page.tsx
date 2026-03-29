@@ -54,7 +54,7 @@ export default function About() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                     <div className="group">
                         <div className="w-48 h-48 mx-auto bg-zinc-800 rounded-full mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-[#1313ec]">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2787&auto=format&fit=crop" className="w-full h-full object-cover" alt="Pastor John Doe" />
+                            <img src="https://res.cloudinary.com/dtt4nxboi/image/upload/v1774742732/612346690_25931888603139875_1563062097116037998_n_b7ldyo.jpg" className="w-full h-full object-cover" alt="Pastor John Doe" />
                         </div>
                         <h3 className="text-2xl font-bold tracking-tight text-white mb-2">Pastor Fortune Kiri</h3>
                         <p className="text-[#1313ec] uppercase tracking-widest text-xs font-bold mb-4">Senior Pastor</p>
