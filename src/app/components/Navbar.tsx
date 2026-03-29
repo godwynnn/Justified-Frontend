@@ -60,7 +60,7 @@ export default function Navbar({ showSearch, onSearchChange }: NavbarProps) {
                                 <Link href="/sermons/new" className="md:hidden flex items-center justify-center size-9 border border-white/10 bg-white/5 rounded-lg text-white" title="New Sermon">
                                     <span className="material-symbols-outlined text-lg">add</span>
                                 </Link>
-                                
+
                                 <div className="flex items-center gap-3">
                                     <div className="hidden xs:flex size-8 bg-white/10 rounded-full items-center justify-center">
                                         <span className="material-symbols-outlined text-white/60 text-lg">person</span>
@@ -79,7 +79,7 @@ export default function Navbar({ showSearch, onSearchChange }: NavbarProps) {
                                 </div>
                             </div>
                         ) : (
-                            <div className="flex items-center gap-4 md:gap-6">
+                            <div className="flex items-center gap-4 md:gap-6 hidden">
                                 <Link href="/login" className="text-sm font-bold text-slate-400 hover:text-white transition-colors">Log In</Link>
                                 <Link href="/signup" className="hidden sm:block bg-[#1313ec] hover:bg-[#1313ec]/80 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-[#1313ec]/20">
                                     Join Us
