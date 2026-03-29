@@ -174,10 +174,10 @@ export default async function Home() {
                         <div className="col-span-1 md:col-span-2">
                             <div className="mb-8 flex justify-start">
                                 <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
-                                    <img 
-                                        src="/logo.png" 
-                                        alt="Justified Global Ministries" 
-                                        className="h-20 w-auto object-contain" 
+                                    <img
+                                        src="/logo.png"
+                                        alt="Justified Global Ministries"
+                                        className="h-20 w-auto object-contain"
                                     />
                                 </Link>
                             </div>
@@ -188,9 +188,9 @@ export default async function Home() {
                         <div>
                             <h5 className="font-bold mb-6 text-white uppercase text-xs tracking-widest">Connect</h5>
                             <ul className="space-y-4 text-slate-400 font-light">
-                                <li><Link className="hover:text-[#1313ec] transition-colors" href="/contact">Instagram</Link></li>
+                                <li><Link className="hover:text-[#1313ec] transition-colors" href="https://www.instagram.com/justifiedglobal/">Instagram</Link></li>
                                 <li><Link className="hover:text-[#1313ec] transition-colors" href="/contact">YouTube</Link></li>
-                                <li><Link className="hover:text-[#1313ec] transition-colors" href="/contact">Twitter</Link></li>
+                                <li><Link className="hover:text-[#1313ec] transition-colors" href="https://web.facebook.com/JustifiedGlobalOutreach/?_rdc=1&_rdr#">Facebook</Link></li>
                             </ul>
                         </div>
                         <div>
