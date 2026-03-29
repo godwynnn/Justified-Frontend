@@ -53,10 +53,10 @@ export default function LoginPage() {
             <div className="mx-auto w-full max-w-md">
                 <div className="text-center mb-10">
                     <Link href="/" className="inline-block mb-6 group">
-                        <img 
-                            src="/logo.png" 
-                            alt="Justified Logo" 
-                            className="h-16 w-auto object-contain group-hover:scale-105 transition-transform mx-auto filter brightness-110 shadow-lg shadow-[#1313ec]/10" 
+                        <img
+                            src="/logo.png"
+                            alt="Justified Logo"
+                            className="h-16 w-auto object-contain group-hover:scale-105 transition-transform mx-auto filter brightness-110 shadow-lg shadow-[#1313ec]/10"
                         />
                     </Link>
                     <h1 className="text-3xl font-bold tracking-tight uppercase">Welcome Back</h1>
@@ -88,7 +88,7 @@ export default function LoginPage() {
                         <div className="space-y-1.5">
                             <div className="flex items-center justify-between ml-1">
                                 <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Password</label>
-                                <button type="button" className="text-[10px] font-bold text-[#1313ec] uppercase tracking-wider hover:underline">Forgot?</button>
+                                {/* <button type="button" className="text-[10px] font-bold text-[#1313ec] uppercase tracking-wider hover:underline">Forgot?</button> */}
                             </div>
                             <input
                                 type="password"
@@ -110,10 +110,10 @@ export default function LoginPage() {
                         </button>
                     </form>
 
-                    <p className="text-center text-slate-400 text-sm mt-8">
+                    {/* <p className="text-center text-slate-400 text-sm mt-8">
                         New to Justified?{' '}
                         <Link href="/signup" className="text-[#1313ec] font-bold hover:underline">Sign Up</Link>
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </div>
